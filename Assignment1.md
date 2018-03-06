@@ -1,16 +1,16 @@
 # Introductory material assignments' solutions
 1.
-The woman with a telescope was seen by the man.
-The man used a telescope to see the woman.
+* The woman with a telescope was seen by the man.
+* The man used a telescope to see the woman.
 
 2.
-Sisters reunited in checkout line at Safeway, after ten years. (separation)
+* Sisters reunited in checkout line at Safeway, after ten years. (separation)
 
-Large hole appears in High Street. City authoritise are trying to fix it.
-Large hole appears in High Street. City authoritise are in process of fixing it.
+* Large hole appears in High Street. City authoritise are trying to fix it.
+* Large hole appears in High Street. City authoritise are in process of fixing it.
 
-Mayor says bus passengers should wear bus' belts.
-Mayor says bus passengers should put on protection belts.
+* Mayor says bus passengers should wear bus' belts.
+* Mayor says bus passengers should put on protection belts.
 
 3. no head injury is too trivial to ignore
 
@@ -31,25 +31,27 @@ no head injury is too trivial to ignore. - This tells us that the threshold is s
 So based on that all head injuries can be ignored.
 
 
-Another helpful interpretation is:
+* Another helpful interpretation is:
 "No X is too Y to be Z'd" can mean either "all Xs should be Z'd, no matter how Y" or "any X could be Z'd, no matter how Y.
 
-More info here:
+* More info here:
 http://languagelog.ldc.upenn.edu/nll/?p=1926
 
 4. in case of fire, do not use elevator
 
 background assumption is that:
-in case of fire you should go out of the building.
-elevator is faster, more convenient and the general option for exiting.
+* in case of fire you should go out of the building.
+* elevator is faster, more convenient and the general option for exiting.
 
 The double meaning is that you can understand that:
-you can't put off fire with elevator
+* you can't put off fire with elevator
 
-clearer sentence would be:
+* clearer sentence would be:
+```
 in case of fire, do not use elevator as an exit.
 in case of fire, use stairs to exit.
 in case of fire, exit through the stairs.
+```
 
 5. this page intentionally left blank.
 
@@ -75,9 +77,9 @@ in case of fire, exit through the stairs.
 ```
 
 6.
-"no food or drink beyond this point" sing on coffeeshop where they sell drinks and food
-"god save the queen"
-"these pipe homes could fight rents" headline linking to this page http://www.bbc.com/capital/story/20180301-homes-made-of-concrete-tubes-could-solve-the-housing-crisis
+* "no food or drink beyond this point" sing on coffeeshop where they sell drinks and food
+* "god save the queen"
+* "these pipe homes could fight rents" headline linking to this page http://www.bbc.com/capital/story/20180301-homes-made-of-concrete-tubes-could-solve-the-housing-crisis
 
 7. The temperature is hot today.
 it says that the temperature can be hot/cold, instead of the implied meaning - the temperature is high, so the weather is hot.
@@ -103,7 +105,6 @@ When you add 1 to the product there are two options:
   2. the new value is not in the list -> so it's not prime
 ```
 
-
 ## JUST FOR FUN section
 1.
 context: Test
@@ -112,6 +113,6 @@ context: Test
 
 2.
 - similar as the one above
-- the problem description itself
+- the problem description itself (context: recursion)
 
 
