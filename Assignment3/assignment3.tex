@@ -1,0 +1,58 @@
+\documentclass{article}
+\title{Assignment 3}
+\author{Viktor Nonov}
+\date{March 7, 2018}
+\usepackage[cm]{fullpage}
+\usepackage{enumerate}
+\usepackage{amsmath}
+
+\begin{document}
+\section*{Assignment 3 Solutions}
+
+\section{}
+Dollar is strong - D, Yuan is strong - Y, New US-China trade agreement signed - T
+
+\begin{enumerate}[a.]
+\item $T \implies D \wedge Y$
+\item $D \implies \neg Y$
+\item $\neg D \implies \neg T$
+\item $T \implies (\neg D \wedge Y) \vee (D \wedge \neg Y)$
+\item $T \implies \neg D \wedge Y$
+\item $T \implies Y \implies \neg D$
+\item $T \implies Y \wedge D \implies \neg Y \wedge \neg D$
+\item $T \implies (\neg D \wedge Y) \vee (D \wedge \neg Y)$
+\end{enumerate}
+
+\section{}
+\begin{tabular}{ l l l l l }
+  $\phi$ & $\neg \phi$ & $\psi$ & $\phi \implies \psi$ & $\neg \phi \vee \psi$ \\
+  T      & F           & T      & T                       & T                     \\
+  T      & F           & F      & F                       & F                     \\
+  F      & T           & T      & T                       & T                     \\
+  F      & T           & F      & T                       & T                     \\
+\end{tabular}
+
+\section{}
+The conclusion from the truth table above is that the conditional $\phi \implies \psi$ is equivalent to $\neg \phi \vee \psi$.
+
+Example:
+Do not copy your homework, or you will fail. $\Leftrightarrow$ If you copy your homework, then you will fail.
+
+\section{}
+\begin{tabular}{ l l l l l l }
+  $\phi$ & $\psi$ & $\neg \psi$ & $\phi \implies \psi$ & $\phi \not\Rightarrow \psi$ & $\phi \wedge \neg \psi$ \\
+  T      & T      & F           & T                    & F                           & F                       \\
+  T      & F      & T           & F                    & T                           & T                       \\
+  F      & T      & F           & T                    & F                           & F                       \\
+  F      & F      & T           & T                    & F                           & F                       \\
+\end{tabular}
+
+\section{}
+The conclusion from the truth table above is that the condtional $\phi \not\Rightarrow \psi$ is equivalent to $\phi \wedge \neg \psi$.
+Which also can be derived by using the DeMorgan law:
+
+$\phi \implies \psi \Leftrightarrow \neg \phi \vee \psi$
+
+$\phi \not\Rightarrow \psi \Leftrightarrow \neg(\phi \implies \psi) \Leftrightarrow \neg(\neg \phi \vee \psi) \Leftrightarrow \phi \wedge \neg \psi$ 
+
+\end{document}
