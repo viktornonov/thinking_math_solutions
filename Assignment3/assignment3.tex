@@ -16,11 +16,11 @@ Dollar is strong - D, Yuan is strong - Y, New US-China trade agreement signed - 
 \item $T \implies D \wedge Y$
 \item $D \implies \neg Y$
 \item $\neg D \implies \neg T$
-\item $T \implies (\neg D \wedge Y) \vee (D \wedge \neg Y)$
+\item $T \implies \neg (D \wedge Y)$  my wrong first try $T \implies (\neg D \wedge Y) \vee (D \wedge \neg Y)$
 \item $T \implies \neg D \wedge Y$
 \item $T \implies Y \implies \neg D$
-\item $T \implies Y \wedge D \implies \neg Y \wedge \neg D$
-\item $T \implies (\neg D \wedge Y) \vee (D \wedge \neg Y)$
+\item $T \implies (D \implies Y) \wedge (Y \implies D)$ (it's a biconditional). My wrong first try $T \implies Y \wedge D \implies \neg Y \wedge \neg D$
+\item $T \implies (D \vee Y) \wedge \neg (D \wedge Y)$ (basically XOR). My wrong first try $T \implies (\neg D \wedge Y) \vee (D \wedge \neg Y)$
 \end{enumerate}
 
 \section{}
@@ -53,6 +53,35 @@ Which also can be derived by using the DeMorgan law:
 
 $\phi \implies \psi \Leftrightarrow \neg \phi \vee \psi$
 
-$\phi \not\Rightarrow \psi \Leftrightarrow \neg(\phi \implies \psi) \Leftrightarrow \neg(\neg \phi \vee \psi) \Leftrightarrow \phi \wedge \neg \psi$ 
+$\phi \not\Rightarrow \psi \Leftrightarrow \neg(\phi \implies \psi) \Leftrightarrow \neg(\neg \phi \vee \psi) \Leftrightarrow \phi \wedge \neg \psi$
 
+\section{PUZZLE}
+A woman was driving in her car along a black road.
+She did not have her car lights on.
+There was no moon and no light from the stars.
+A black dog was asleep in the middle of the road.
+As the woman approached the dog, she swerved to avoid it, and the animal slept on.
+How did the woman know to swerve around the dog?
+
+\subsection{Solution 1}
+Assign X to "It is night time" \\
+Assign Y to "It is daytime" \\
+It never says it's night $\neg X \implies Y$ \\
+In daytime it's easy to see the dog and swerve around it.
+
+\subsection{Solution 2}
+It might be a nighttime, because: \\
+Assign X to "no light from the stars" \\
+Assign Y to "it is night time" \\
+Assign Z to "The sun is a star" \\
+$X \wedge Z \implies Y$ \\
+Then: \\
+Assign A to "car lights on" \\
+Assign B to "interior lights on" \\
+Assign C to "headlights on" \\
+If \\
+$A \implies B \vee C$ \\
+so \\
+if A is false, given the truth table for conditionals: $B \vee C$ can be true or false, so the statement is true.
+if C is true, but B false $\implies$ her headlights were on, so she could see the dog and swerve around it.
 \end{document}
