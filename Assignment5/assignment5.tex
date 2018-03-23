@@ -1,0 +1,88 @@
+\documentclass{article}
+\title{Assignment 5}
+\author{Viktor Nonov}
+\date{March 19, 2018}
+\usepackage[cm]{fullpage}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\section*{Assignment 5 Solutions}
+
+\section{}
+a. $(\exists x \in \mathbb{N})[x^3 = 27]$ \\
+b. $(\exists x \in \mathbb{N})[x > 1 000 000]$ \\
+c.
+Another way of saying it would: There exists a natural number $n > 1$ that is not prime. \\
+Let P(x) be the "not prime property of x" \\
+$(\exists(x > 1 \wedge x \in N))[P(x)]$ \\
+$(\exists x \in \mathbb{N})[n > 1 \wedge P(x)]$ - looks better\\
+We know that the set $\mathbb{N}$ starts with $\{1,2,3....\}$, so we can rephrase it as: \\
+"There exists a natural number $n \neq 1$ that is not prime." \\
+$(\exists x \in \mathbb{N})[n \neq 1 \wedge P(x)]$ \\
+
+\section{}
+a. $(\forall x \in \mathbb{N})[x^3 \neq 28]$ \\
+b. $(\forall x \in \mathbb{N})[x > 0]$ \\
+c. Let P(x) be the "prime property of x" \\
+$(\exists x \in \mathbb{N})[x > 1 \wedge P(x)]$ \\
+
+\section{}
+let P be all people. \\
+a. $(\forall p1 \in P)(\exists p2 \in P) [ loves(p1, p2) ]$ \\
+b. $(\forall p \in P)[ tall(p) \vee short(p) ]$ \\
+c. $(\forall p \in P)[ tall(p) ] \vee (\forall p \in P) [ short(p) ]$ \\
+d. $(\forall p \in P)[ \neg athome(p) ]$ \\
+e. $(\exists p \in P)[ p = John \wedge comes(p) ] \implies (\forall p \in P)[woman(p) \implies Leave(p)]$ \\
+f. $(\forall p \in P)[man(p) \wedge comes(p)] \implies (\forall p \in P)[woman(p) \implies Leave(p)]$ \\
+
+\section{}
+a. $(\exists x \in \mathbb{R})(\forall a \in \mathbb{R})[x^2 + a = 0]$ \\
+b. $(\exists x \in \mathbb{R})(\forall a \in \mathbb{R})[a < 0 \implies x^2 + a = 0]$\\
+c. $(\forall x \in \mathbb{R})[rational(x)] \Leftrightarrow (\forall x \in \mathbb{R})(\exists p,q \in \mathbb{N})[x = p/q]$\\
+d. $(\exists x)[irational(x)] \Leftrightarrow (\exists x)(\forall p,q \in \mathbb{N})[x \neq p/q]$\\
+e. Rephrasing to "for each irrational number m there is an irrational number n so $n > m$" \\
+$(\forall m \in \mathbb{R} - \mathbb{Q})[\exists n \in \mathbb{R} - \mathbb{Q}](n > m)] \Leftrightarrow (\forall m)(\exists n)(\forall p,q \in \mathbb{N})[m \neq p/q \wedge n \neq p/q \wedge n > m]$ \\
+
+\section{}
+C - all cars \\
+x has property D(x) representing domestic cars \\
+x has property M(x) representing badly made cars \\
+a. $(\forall x \in C)[D(x) \implies M(x)]$ \\
+b. $(\forall x \in C)[\neg D(x) \implies M(x)]$ \\
+c. $(\forall x \in C)[M(x) \implies D(x)]$ \\
+d. $(\exists x \in C)[D(x) \wedge \neg M(x)]$ \\
+e. $(\exists x \in C)[\neg D(x) \wedge M(x)]$ \\
+
+\section{}
+$\forall m,n \in \mathbb{R}$ we have a x with property Q(x), such that $m < x < n$ \\
+$(\forall m,n \in \mathbb{R})(\exists x)[Q(x) \wedge (m < x < n)]$ \\
+
+\section{}
+Given: \\
+all people - P \\
+person - p \\
+time - t \\
+person with my default property fool(p,t) $\Leftrightarrow (\exists p \in P)[Viktor]$ \\
+
+Split the sentece into:
+
+You may fool "all the people some of the time", / $(\forall p \in P)(\exists t)[fool(p,t)]$ \\
+you can even "fool some of the people al the time", / $(\forall t)(\exists p \in P)[fool(p, t)]$\\
+but you cannot "fool all the people all the time". / $(\forall t)(\forall p \in P)[fool(p,t)]$ \\
+
+$(\forall p \in P)(\exists t)[fool(p,t)] \vee (\forall t)(\exists p \in P)[fool(p, t)] \wedge \neg((\forall t)(\forall p \in P)[fool(p,t)]) \Leftrightarrow$ \\
+$(\forall p \in P)(\exists t)[fool(p,t)] \vee (\forall t)(\exists p \in P)[fool(p, t)] \wedge (\exists t)(\exists p \in P)[\neg fool(p,t)])$
+
+\section{}
+a driver is involved in an accident every 6 seconds \\
+a driver - d \\
+6 seconds - t \\
+driver has a property accident - A(d, t) \\
+$(\exists d)(\forall t)[A(d, t)]$ \\
+
+\section{}
+$(\forall t)(\exists d)[A(d, t)]$ \\
+
+\end{document}
