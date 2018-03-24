@@ -1,0 +1,362 @@
+\documentclass{article}
+\title{Assignment 4}
+\author{Viktor Nonov}
+\date{March 9, 2018}
+\usepackage[cm]{fullpage}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{xpatch}
+
+% used to reset the couters in differnet parts
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
+
+\begin{document}
+\part{Assignment 4 Solutions}
+
+\section{}
+By defnition $\phi \Leftrightarrow \psi$ when $\phi \implies \psi$ and $\psi \implies \phi$, so the truth table should like this:\\
+\begin{tabular}{ c c c c c }
+  $\phi$ & $\psi$ & $\phi \implies \psi$ & $\psi \implies \phi$ & $(\phi \implies \psi) \wedge (\psi \implies \phi)$ \\
+  T      & T      & T                    & T                    & T                                                  \\
+  T      & F      & F                    & T                    & F                                                  \\
+  F      & T      & T                    & F                    & F                                                  \\
+  F      & F      & T                    & T                    & T                                                  \\
+\end{tabular}
+
+\section{}
+\begin{tabular}{ c c c c c }
+  $\phi$ & $\psi$ & $\phi \implies \psi$ & $\neg \phi \vee \psi$ & $(\phi \implies \psi) \Leftrightarrow (\neg \phi \vee \psi)$ \\
+  T      & T      & T                    & T                    & T                                                  \\
+  T      & F      & F                    & F                    & T                                                 \\
+  F      & T      & T                    & T                    & T                                                 \\
+  F      & F      & T                    & T                    & T                                                  \\
+\end{tabular} \\
+
+$(\phi \implies \psi) \Leftrightarrow (\neg \phi \vee \psi)$ is tautology. \\
+
+\section{}
+\begin{tabular}{ c c c c c }
+  $\phi$ & $\psi$ & $\phi \not\Rightarrow \psi$ & $\phi \wedge \neg\psi$ & $(\phi \not\Rightarrow \psi) \Leftrightarrow (\phi \wedge \neg\psi)$ \\
+  T      & T      & F                    & F                    & T                                                  \\
+  T      & F      & T                    & T                    & T                                                 \\
+  F      & T      & F                    & F                    & T                                                 \\
+  F      & F      & F                    & F                    & T                                                  \\
+\end{tabular} \\
+
+\section{}
+a. \\
+\begin{tabular}{ c c c c c }
+  $\phi$ & $\psi$ & $\phi \implies \psi$ & $\phi \wedge (\phi \implies \psi)$ & $(\phi \wedge (\phi \implies \psi)) \implies \psi$ \\
+  T      & T      & T                    & T                    & T                                                  \\
+  T      & F      & F                    & F                    & T                                                 \\
+  F      & T      & T                    & F                    & T                                                 \\
+  F      & F      & T                    & F                    & T                                                  \\
+\end{tabular}
+\\
+b. \\
+The last column shows that $(\phi \wedge (\phi \implies \psi)) \implies \psi$ is tautology, which means that it is always True, no matter what the valuation of the propositions is. This means that the it is going to be possible to find $\psi$ in every case. \\n
+Another way would be to write a proof that  $(\phi \wedge (\phi \implies \psi)) \implies \psi$ is not affected by the valuation of its propositions:\\
+$(\phi \wedge (\phi \implies \psi)) \implies \psi$ \\
+$(\phi \wedge (\neg\phi \vee \psi)) \implies \psi$ \\
+$\neg(\phi \wedge (\neg\phi \vee \psi)) \vee \psi$ \\
+$\neg((\phi \wedge \neg\phi) \vee (\phi \wedge \psi)) \vee \psi$ \\
+$\neg((F) \vee (\phi \wedge \psi)) \vee \psi$ \\
+$\neg(\phi \wedge \psi) \vee \psi$ \\
+$(\neg\phi \vee \neg\psi) \vee \psi$ \\
+$\neg\phi \vee \neg\psi \vee \psi$ \\
+$\neg\phi \vee T$   \\
+$T$
+
+\section{}
+Prove that $\neg (\phi \vee \psi) \Leftrightarrow \neg\phi \wedge \neg\psi$: \\
+1. If $\phi \vee \psi$ is true, then at least one of $\phi$ or $\psi$ is true \\
+2. But $\neg(\phi \vee \psi)$ = true shows that, 1. is not the case. \\
+3. Therefore both $\phi$ and $\psi$ must be false. \\
+4. By the definition of conjunction it means that 3. can be represented as $\neg\phi \wedge \neg\psi$, which proves the equivalence. \\
+
+\section{}
+a) 34159 is a prime number. \\
+It's simple statement P, so the negation would be $\neg P$ \\
+34159 is not a prime number \\
+\\
+b) Roses are red and violets are blue. \\
+a = Roses are red. \\
+b = Violets are blue. \\
+The statement is represented by: $a \wedge b$.\\
+The negation will be: $\neg a \vee \neg b$ \\
+Possible denials are: \\
+Roses are not read or violets are not blue. \\
+Either roses aren't red or violets aren't blue or both. \\
+\\
+c) if there are no hamburgers, I will have a hotdog. \\
+there are no hamburgers = a \\
+I will have a hotdog = b \\
+so the statement can be captured with a conditional: $a \implies b$\\
+So the denial of statement is when the statement is negated: $\neg(a \implies b)$ \\
+Converting and using the DeMorgan laws: $\neg(\neg a \vee b) \Leftrightarrow (a \wedge \neg b)$\\
+Which means: \\
+There are no hamburgers and I won't have a hotdog. \\
+\\
+d) Fred will go, but he will not play. \\
+Fred will go = a \\
+he will play = b \\
+Statement is represented by $a \wedge \neg b$\\
+The denial of statement would be $\neg a \vee b$, which is the conditional $a \implies b$, so the statement would be: \\
+If Fred goes, then he will play. \\
+\\
+e) The number x is either negative  or greater than 10. \\
+The statement is: $x < 0 \vee x > 10$. \\
+The denial of statement is: $\neg (x < 0 \vee x > 10) \Leftrightarrow x >= 0 \wedge x <= 10$ \\
+The number is not negative and less or equal to 10.\\
+\\
+f) We will win the first or the second game. \\
+win the first game = a \\
+win the second game = b \\
+The statement is: $a \vee b$ \\
+The denial of statement is: $\neg a \wedge \neg b$ \\
+We won't win the first nor the second game. \\
+
+\section{}
+Prove by constructing the truth table: \\
+\begin{tabular}{ c c c c c c }
+  $\phi$ & $\psi$ & $\neg\phi$ & $\neg\psi$ & $\phi \Leftrightarrow \psi$ & $\neg \phi \Leftrightarrow \neg \psi$ \\
+  T      & T      & F          & F          & T                           & T                                       \\
+  T      & F      & F          & T          & F                           & F                                        \\
+  F      & T      & T          & F          & F                           & F                                        \\
+  F      & F      & T          & T          & T                           & T                                        \\
+\end{tabular} \\
+The truth table shows that they are equivalent. \\
+\\
+Logical proof: \\
+1. If $\phi \Leftrightarrow \psi$ is true, then both $\phi$ and $\psi$ are either true or false. \\
+2. In order for $\neg\phi \Leftrightarrow \neg\psi$ to be true, then $\neg\psi$ and $\neg\phi$ should be either true or false. \\
+3. If $\neg\psi$ and $\neg\phi$ are T, then $\psi$ and $\phi$ are F. The oppisite is also true. Which means that it is the same as 1.\\
+
+\section{}
+a.\\
+\begin{tabular}{ c c c }
+  $\phi$ & $\psi$ & $\phi \Leftrightarrow \psi$  \\
+  T & T & T \\
+  T & F & F \\
+  F & T & F \\
+  F & F & T \\
+\end{tabular} \\
+b.\\
+\begin{tabular}{ c c c c c }
+  $\phi$ & $\psi$ & $\theta$ & $\psi \vee \theta$ & $\phi \implies (\psi \vee \theta)$ \\
+  T      & T      & T          & T          & T  \\
+  T      & T      & F          & T          & T  \\
+  T      & F      & T          & T          & T  \\
+  T      & F      & F          & F          & F  \\
+  F      & T      & T          & T          & T  \\
+  F      & T      & F          & F          & T  \\
+  F      & F      & T          & T          & T  \\
+  F      & F      & F          & F          & T  \\
+\end{tabular} \\
+
+\section{}
+
+\begin{tabular}{ c c c c c c c c }
+  $\phi$ & $\psi$ & $\theta$ & $\psi \wedge \theta$ & $\phi \implies \psi$ & $\phi \implies \theta$ & $\phi \implies (\psi \wedge \theta)$ & $(\phi \implies \psi) \wedge (\phi \implies \theta)$\\
+  T      & T      & T          & T          & T                           & T             & T & T                          \\
+  T      & T      & F          & F          & F                           & F             & F & F                         \\
+  T      & F      & T          & T          & T                           & T             & T & T                        \\
+  T      & F      & F          & F          & T                           & T             & T & T                         \\
+  T      & T      & T          & F          & T                           & F             & F & F                        \\
+  T      & T      & F          & F          & F                           & T             & F & F                        \\
+  T      & F      & T          & F          & T                           & T             & T & T                         \\
+  T      & F      & F          & F          & T                           & T             & T & T                         \\
+\end{tabular} \\
+This table shows some form of the distributive property: $\phi \implies (\psi \wedge \theta) \Leftrightarrow (\phi \implies \psi) \wedge (\phi \implies \theta)$\\
+
+\section{}
+$(\psi \implies (\phi \wedge \theta)) \implies (\phi \implies \psi) \wedge (\phi \implies \theta)$\\
+1. if we know $\phi \implies (\psi \wedge \theta)$ then we can get the value of $\psi \wedge \theta$.\\
+2. Once we know this value, then we can have the value of $\psi$ and $\theta$.\\
+from 1 and 2 follows that we can deduce $\psi$ and $\theta$ from $\phi$ - $(\phi \implies \psi) \wedge (\phi \implies \theta)$ \\
+\\
+$((\phi \implies \psi) \wedge (\phi \implies \theta)) \implies (\psi \implies (\phi \wedge \theta))$\\
+1. we can find the value of $\psi$ from $\phi$ and $\theta$ from $\phi$ \\
+2. once we know their values we know the value of $\psi \wedge \theta$ \\
+3. from 1 and 2 follows that we can get $\phi$ from $\psi \wedge \theta$ \\
+$\psi \implies (\phi \wedge \theta)$ \\
+
+\section{}
+\begin{tabular}{ c c c c }
+  $\phi$ & $\psi$ & $\phi \implies \psi$ & $\neg \psi \implies \neg \phi$ \\
+  T      & T      & T                    & T                              \\
+  T      & F      & F                    & F                              \\
+  F      & T      & T                    & T                              \\
+  F      & F      & T                    & T                              \\
+\end{tabular} \\
+
+\section{}
+a. if two rectangles does not have the same area then they are not congruent \\
+b. if a triangle with sides a, b, c(c is the largest) $a^2 + b^2 \neq c^2$ then it is not right triangle. \\
+c. if n is not prime, then $2^n - 1$ is not prime \\
+d. if Dollar rise, the Yuan fail.
+
+\section{}
+\begin{tabular}{ c c c c }
+  $\phi$ & $\psi$ & $\psi \implies \phi$ & $\neg \psi \implies \neg \phi$ \\
+  T      & T      & T                    & T                              \\
+  T      & F      & T                    & F                              \\
+  F      & T      & F                    & T                              \\
+  F      & F      & T                    & T                              \\
+\end{tabular} \\
+
+\section{}
+a. if the two rectangles have the same area then they are congruent \\
+b. if triangle with sides a,b,c (c is the largest) and $a^2 + b^2 = c^2$ then it is right angled. \\
+c. if n is prime then $2^n - 1$ is prime. \\
+d. if the dollar fails, then yuan rises. \\
+
+\part{OPTIONAL PROBLEMS}
+
+\section{}
+\begin{tabular}{ c c c c }
+  $\phi$ & $\psi$ & $\neg \psi$ & $\neg \psi \implies \phi$ \\
+  T      & T      & F           & T                         \\
+  T      & F      & T           & T                         \\
+  F      & T      & F           & T                         \\
+  F      & F      & T           & F                         \\
+\end{tabular} \\
+
+\section{}
+\begin{tabular}{ c c c }
+  $\phi$ & $\psi$ & $\phi \oplus \psi$ \\
+  T      & T      & F                  \\
+  T      & F      & T                  \\
+  F      & T      & T                  \\
+  F      & F      & F                  \\
+\end{tabular} \\
+
+\section{}
+prove by truth table \\
+\begin{tabular}{ c c c c c}
+  $\phi$ & $\psi$ & $\neg \phi \wedge \psi$ & $\phi \wedge \neg \psi$ & $(\neg \phi \wedge \psi) \vee (\phi \wedge \neg \psi)$ \\
+  T      & T      & F                       & F                       & F                                                      \\
+  T      & F      & F                       & T                       & T                                                      \\
+  F      & T      & T                       & F                       & T                                                      \\
+  F      & F      & F                       & F                       & F                                                      \\
+\end{tabular} \\
+
+\section{}
+a. if the converse is T then the conditional is actually biconditional, so both sides are equivalent - if two rectangles have the same area then they are congruent $\Leftrightarrow$ if two triangles are congruent then they have the same area.\\
+b. "if it is Sunday, then I'm not gonna go to work today". The converse "If I'm not gonna go to work today, then it means it's Sunday.", which is not always true.\\
+c. every contraposive of a conditional that is true is also true, because they are equivalent. \\
+d. conditional and contrapositive are equivalent, so it is not possible to have conditional that is true and contrapositive that is false \\
+
+\section{}
+
+\begin{tabular}{ c c c c }
+  $M$  & $N$  & $M x N$ & $M + N$ \\
+  T(1) & T(1) & 1       & 0       \\
+  T(1) & F(0) & 0       & 1       \\
+  F(0) & T(1) & 0       & 1       \\
+  F(0) & F(0) & 0       & 0       \\
+\end{tabular} \\
+
+\section{}
+a. $\wedge$ is x \\
+b. $\oplus$ (XOR) corresponds to + \\
+c. it does not look like it \\
+Let's take - as unary operator, so $-N \equiv \neg N$ \\
+we use the fact that + is XOR to check if it works for summing \\
+$M + (-N) \Leftrightarrow M \oplus \neg N$\\
+\begin{tabular}{ c c c c }
+  $M$  & $N$  & $\neg N$ & $M \oplus \neg N \equiv (M - N)$ \\
+  T(1) & T(1) & F(0)     & T(1)                             \\
+  T(1) & F(0) & T(1)     & F(0)                             \\
+  F(0) & T(1) & F(0)     & F(0)                             \\
+  F(0) & F(0) & T(1)     & T(1)                             \\
+\end{tabular} \\
+The truth table shows that for the case 0 - 1 we are getting 1, which in normal arithmetic is -1, so it does not work for normal arithmetic. \\
+In mod2 arithmetic though $-1 \equiv 1 (\mod 2)$, because $(-1 \mod 2 = 1)$, so in mod2 arithmetic $\neg \equiv -$\\
+
+\section{}
+\begin{tabular}{ c c c c }
+  $M$  & $N$  & $M * N$ & $M + N$ \\
+  F(1) & F(1) & F(1)    & T(0)    \\
+  F(1) & T(0) & T(0)    & F(1)    \\
+  T(0) & F(1) & T(0)    & F(1)    \\
+  T(0) & T(0) & T(0)    & T(0)    \\
+\end{tabular} \\
+a. Multiplication (x) becomes disjunction $\vee$ \\
+b. Summation (+) becomes inverted XOR which is equivalence $\Leftrightarrow$ \\
+c.
+\begin{tabular}{ c c c c }
+  $M$  & $N$  & $\neg N$ & $M \neg N \equiv (M - N)$ \\
+  T(0) & T(0) & F(1)     & T(0)                             \\
+  T(0) & F(1) & T(0)     & F(1)                             \\
+  F(1) & T(0) & F(1)     & F(1)                             \\
+  F(1) & F(1) & T(0)     & T(0)                             \\
+\end{tabular} \\
+Here the subtraction and $\neg$ can be equivalent in mod2 arithmetic if negation is considered binary connective, but in logic $\neg$ is unary connetive, so I can't think of any useful conclusions here. \\
+
+\section{}
+Given:\\
+vowel = a \\
+not vowel = $\neg a$ \\
+odd = b \\
+even = $\neg b$ \\
+
+\begin{tabular}{ c c c c c }
+  $a$ & $b$ & $\neg a$ & $ \neg b$ & $a \implies b$ \\
+  T   & T   & F        & F         & T              \\
+  T   & F   & F        & T         & F              \\
+  F   & T   & T        & F         & T              \\
+  F   & F   & T        & T         & T              \\
+\end{tabular} \\
+We have the cards: \\
+\begin{tabular}{ c c c c  }
+  B        & E   & 4        & 7   \\
+  $\neg a$ & $a$ & $\neg b$ & $b$ \\
+\end{tabular} \\
+
+We can use that $a \implies b \Leftrightarrow \neg b \implies \neg a$, so we know for sure that:\\
+below E we should have odd number\\
+below 4 we should have not vowel letter\\
+we don't care about 7, because the opposite side can vower or not vowel and the implication still is gonna be valid. (1st and 3rd rows) \\
+We do not care about B either, because of the reasons above.\\
+
+Looking at the truth table the cards that we need to check are: \\
+4 - if it is not vowel then the implication is valid, otherwise it's not. \\
+E - if it is odd then the implication is valid, otherwise it's not.
+
+\section{}
+Prove that: $m*n = odd number \Leftrightarrow m = odd number \wedge n = odd number$ \\
+Let's prove first: \\
+$m = odd  \wedge n = odd \implies m*n = odd$ \\
+represent a odd number as $2k + 1$, so:\\
+$m = 2k_1 + 1$ and $n = 2k_2 + 1$\\
+$m*n = (2k_1 + 1)(2k_2+1) = 4k_1k_2 + 2(k_1 + k_2) + 1 = 2(2k_1k_2 + k_1 + k_2) + 1$,\\
+which is odd $\forall k_1,k_2 \in N$\\
+
+Now we need to prove that:
+$m * n = odd \implies m = odd \wedge n = odd$. \\
+using contrapositive: \\
+$n = even or m = even \implies m*n = even$ \\
+even nubmer can be represented as: $2k$, odd number as: $2k +1$ so \\
+1. both are even: \\
+if $m = 2k_1$ and $n = 2k_2$, then $2k_1*2k_2 = 4k_1k_2$, which is even\\
+2. one even one odd: \\
+if $m = 2k_1$ and $n = 2k_2 + 1$, then $2k_1*(2k_2 + 1)$, which is even\\
+3. m odd, n even: \\
+analogy of 2. \\
+so for all the cases when the ancedent is true, the consequent is also true, so the implicaiton is true, which proves the contrapositive, which proves the original $m * n = odd \implies m = odd \wedge n = odd$. \\
+
+\section{}
+No, because of the counter example 2 * 3 = 6 - even, when 2 is even and 3 is not even.
+
+\section{}
+This questions is similar to question 8, so following the same logic we should check the Beer guy and the under age person.
+
+\section{}
+Youth party problem was easier for me, probably because: \\
+- I solved the Wason problem first, which is the formal version of the Youth party problem \\
+- The youth party problem is a problem that I've faced in real life. \\
+
+\end{document}
