@@ -1,0 +1,110 @@
+\documentclass{article}
+\title{Assignment 6}
+\author{Viktor Nonov}
+\date{March 26, 2018}
+\usepackage[cm]{fullpage}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\section*{Assignment 6 Solutions}
+
+\section{}
+$\neg((\exists x)[A(x)]) \Leftrightarrow (\forall x)[\neg A(x)]$ \\
+for $\Rightarrow$:\\
+Assume $\neg(\exists x)[A(x)]$ is true. In words "there is no x for which A(x) is true".\\
+This means that for all x A(x) is false. \\
+In symbols:\\
+$(\forall x)[\neg A(x)]$ \\
+for $\Leftarrow$:
+Assume $(\forall x)[\neg A(x)]$. In works "for all x A(x) is false".\\
+This meansd that there is no for which A(x) is true.\\
+In symbols: \\
+$\neg((\exists x)[A(x)])$
+
+\section{}
+There is an even prime bigger than 2.\\
+In symbols: $(\exists x > 2)[E(x) \wedge P(x)]$\\
+To prove that this is false we can try to prove that the negation is true:\\
+$(\forall x > 2)[\neg E(x) \vee \neg P(x)]$\\
+This means that all numbers bigger than two are odd or are not prime. A natural number can be either odd or even. \\
+Even number is a number that is divided by 2, which means it's not prime. \\
+This mean that the statement $(\forall x > 2)[\neg E(x) \vee \neg P(x)]$ is true, which proves that: $(\exists x > 2)[E(x) \wedge P(x)]$ is false
+
+\section{}
+a. $(\forall x in P)[S(x) \implies Lp(x)]$ \\
+b. $(\exists x in P)[Friend(x) \wedge \neg HaveCar(x)]$ \\
+c. $(\exists x in A)[Elephant(x) \wedge \neg LikeMuffins(x)]$ \\
+d. $(\forall x in F)[Triangle(x) \implies Isosceles(x)]$ \\
+e. $(\exists x in P)[Student(x) \wedge InClass(x) \wedge \neg HereToday(x)]$ \\
+f. $(\forall x in P)(\exists y in P)[Loves(x, y)]$ \\
+g. The opposite one would be There's someone that loves everyone: $(\exists x)(\forall y)[loves(x, y)]$, so after inverting it: \\
+$(\forall x in P)(\exists y in P)[\neg L(x, y)]$\\
+h. $(\forall x)[Man(x) \wedge Comes(x)] \implies (\forall w)[Woman(w) \implies Leave(w)]$\\
+i. $(\forall x)[Tall(x) \vee Short(x)]$\\
+j. $(\forall x)[Tall(x)] \vee (\forall x)[Short(x)]$\\
+k. $\neg (\forall x \in S)[Precious(x) \wedge Beautiful(x)] \Leftrightarrow (\exists x \in S)[\neg Precious(x) \vee \neg Beautiful(x)]$\\
+l. $(\forall x \in P)[\neg LovesMe(x)]$ \\
+m. $(\exists x \in S)[American(x) \wedge Poisonous(x)]$ \\
+n. $(\exists x \in A)[Snake(x) \wedge American(x) \wedge Poisonous(x)]$ \\
+
+\section{}
+a. $(\exists x in P)[S(x) \wedge \neg Lp(x)]$ - There are some students that do not like pizza. \\
+b. $(\forall x in P)[Friend(x) \implies HaveCar(x)]$ - People that are not my friends have car./None of my friends have car. \\
+c. $(\forall x in A)[Elephant(x) \implies LikeMuffins(x)]$ - All elephans like muffins.\\
+d. $(\exists x in F)[Triangle(x) \wedge \neg Isosceles(x)]$ - There's a triangle that is not isosceles.\\
+e. $(\forall x in P)[\neg (Student(x) \wedge InClass(x)) \vee HereToday(x)] \Leftrightarrow (\forall x in P)[(Student(x) \wedge InClass(x)) \implies HereToday(x)] $ - all the students in the class are here today. \\
+f. $(\exists x in P)(\forall y in P)[\neg Loves(x, y)]$ - There is a person that does not love anyone.\\
+g. $(\exists x)(\forall y)[loves(x, y)]$ - There is a person that loves everyone. \\
+h. $(\forall x)[(Man(x) \wedge Comes(x))] \wedge (\exists x)[(Woman(y) \wedge \neg Leave(y))]$ - A man is coming and there's a woman  that won't leave.
+i. $(\exists x)[\neg Tall(x) \wedge \neg Short(x)]$ - There is a person that is short and tall.\\
+j. $(\exists x)[\neg Tall(x)] \wedge (\exists x)[\neg Short(x)]$ - There is a person that is short and there is a person that is tall.\\
+k. $(\forall x \in S)[Precious(x) \wedge Beautiful(x)]$ - all stones are precious and beautiful.\\
+l. $(\exists x \in P)[LovesMe(x)]$ - there is a person that loves me.\\
+m. $(\forall x \in S)[\neg American(x) \vee \neg Poisonous(x)] \Leftrightarrow (\forall x \in S)[American(x) \implies \neg Poisonous(x)]$ - All snakes that are american are not poisonous. \\
+n. $(\forall x \in A)[\neg Snake(x) \vee \neg American(x) \vee \neg Poisonous(x)] \Leftrightarrow (\forall x \in A)[Snake(x) \implies \neg American(x) \vee \neg Poisonous(x)]$ - All snakes are not american or not poisonous.\\
+
+\section{}
+a. $(\exists x \in \mathbb{N})[x=2/3]$ is false, because $2/3 \notin \mathbb{N}$ \\
+b. $(\exists x \in \mathbb{Q})[x=+-sqrt 2]$ is false because $\sqrt 2 \in \mathbb{R} - \mathbb{Q}$\\
+c. True \\
+d. True \\
+e. $(\forall x)(\exists y)(\forall z)[xy = xz]$ for reals.\\
+when x = 0, the it is true. \\
+when x = 1, should find $(\exists y)(\forall z)[y = z]$, but there is not such y that can be equal to all values of z, so it is False.\\
+\\
+f. $(\forall x)(\exists y)(\forall z)[xy = xz]$ for primes\\
+when x = 2, we should find $(\exists y)(\forall z)[2y = 2z]$, but there is not such y that for all z to be $y = z$, so it is False.\\
+g. $(\forall x)[x < 0 \implies (\exists y)(y^2 = x)]$ for real numbers is false, because $(\forall y)[y^2 \geq 0]$\\
+h. $(\forall x)[x < 0 \implies (\exists y)(y^2 = x)]$ for positive real numbers. It is true, because $x < 0$ is false, which means that the implication will always be true \\
+
+\section{}
+a. $(\forall x \in \mathbb{N})[x \neq 2/3]$\\
+b. $(\forall x \in \mathbb{Q})[x \neq +-sqrt 2]$\\
+c. $(\exists x)(\forall y)(y \neq x^2)$\\
+d. same as c.\\
+e. $(\exists x)(\forall y)(\exists z)[xy \neq xz]$\\
+f. same as e.\\
+g. $(\exists x)[x < 0 \wedge (\forall y)(y^2 \neq x)]$\\
+h. same as g.\\
+
+
+\section{}
+a. $(\exists x \in \mathbb{N})(\exists y \in \mathbb{N})(x+y \neq 1)$\\
+b. $(\exists x > 0)(\forall y < 0)(x+y \neq 0)$\\
+c. $(\forall x)(\exists e > 0)(x \leq -e \vee x \geq e)$\\
+d. $(\exists x \in \mathbb{N})(\exists y \in \mathbb{N})(\forall z \in \mathbb{N})[x + y \neq z^2]$\\
+
+\section{}
+In symbols the sentence has the meaning:\\
+$(\forall x)(\exists t)[Fool(x,t)] \vee (\exists x)(\forall t)[Fool(x,t)] \wedge \neg((\forall x)(\forall t)[Fool(x,t)])$ \\
+The negated looks like this:\\
+$(\exists x)(\forall t)[\neg Fool(x,t)] \wedge (\forall x)(\exists t)[\neg Fool(x,t)] \vee (\forall x)(\forall t)[Fool(x,t)]$ \\
+In words: \\
+There's no one that you can fool all the time and can't fool everyone even once or you can fool everyone all the time. \\
+
+\section{}
+$(\exists \epsilon > 0)(\forall \delta > 0)(\exists x)(|x -a| < \delta \wedge [f(x) - f(a)] \geq \epsilon)$
+
+\end{document}
