@@ -1,0 +1,197 @@
+\documentclass{article}
+\title{Assignment 6}
+\author{Viktor Nonov}
+\date{April 2, 2018}
+\usepackage[cm]{fullpage}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\section*{Assignment 7 Solutions}
+
+\section{}
+$(\forall b)[Bird(b) \implies Fly(b)]$ \\
+So in order to disprove it I need to find one counterexample, but due to my intelligence deficiency I'm not able to recall such bird...
+
+\section{}
+$(\forall x,y \in \mathbb{R})[(x - y)^2 > 0]$ \\
+same as the exercise above I need to find one counterexample, such that $(x-y)^2 \leq 0$:\\
+Let x = y: $(y - y)^2 \leq 0 \Leftrightarrow 0 \leq 0$, which is true, so the statement in the exercise is disproved.
+
+\section{}
+Using quantifiers the statement looks like this:\\
+$(\forall m, n)(\exists p,q,r,k,l,t \in \mathbb{N})[m = \frac{p}{q} \wedge n = \frac{r}{k} \implies \frac{m+n}{2} = \frac{l}{t}]$\\
+Assume: $m = \frac{p}{q} \wedge n = \frac{r}{k}$\\
+Deduce: $\frac{m+n}{2}$, by substituting m and n:\\
+$\frac{\frac{p}{q} + \frac{r}{k}}{2} \equiv \frac{2(kp + rq)}{kq}$ both the numberator and denominator are integers, so this proves the implication.
+
+\section{}
+Because $\psi \Leftrightarrow \phi$ is shorthand for $\psi \implies \phi \wedge \phi \implies \psi$ \\
+
+\section{}
+$\neg \phi \implies \neg \psi$ is the contrapositive for: $\psi \implies \phi$, so:\\
+$((\neg \phi \implies \neg \psi) \wedge (\phi \implies \psi)) \Leftrightarrow ((\psi \implies \phi) \wedge (\phi \implies \psi))$ and given statement in the previous exercise: \\ $\phi \Leftrightarrow \psi$
+\section{}
+Need to prove: \\
+$\sum_{i=1}^{5}M(i) = 2M \implies (\exists i)[Money(i) \geq 400K]$\\
+Prove by contradiction: \\
+Assume:\\
+$(\forall i)[Money(i) < 400K]$, so: \\
+$\sum_{i=1}^{5}M(i) = M(1) + M(2) + M(3) + M(4) + M(5) < 2M$, \\
+which is contradiction to $\sum_{i=1}^{5}M(i) = 2M$ (which we know for sure it's true),\\
+so $(\exists i)[Money(i) \geq 400K]$\\
+
+\section{}
+Proving $\sqrt 3 $ is irrational: \\
+Prove by contradiction: \\
+Assume $\sqrt 3$ is rational $\implies (\exists p,q \in \mathbb{N})[p/q = \sqrt{3}]$ \\
+$p^2/q^2 = 3 \equiv p^2 = 3q^2$ \\
+so $p^2 = 3k$ \\
+Here there are two options: \\
+* k - even - k = 2e \\
+then $p^2 = 6e$, which means that p is even
+also means that $q^2$ is even and q is even, but that's impossible since they are not supposed to have common factors\\
+
+* k - odd - k = 2e + 1\\
+then q is odd, since $q^2 = 3$ and p is odd since $p^2 = 3k$, so p = 2t + 1
+
+substituting in the equation:\\
+$(2t+1^2 = 3(2e + 1)^2$\\
+$2(t^2+t) = 6(e^2 + e) + 1$, but this is odd = even, which impossible, the assumption is impossible and $\sqrt{3}$ is irrational.
+
+\section{}
+a. Yuan rises $\implies$ Dollar falls\\
+b. $-y < -x \implies x < y$\\
+c. two triangles have the same area $\implies$ they are congruent.\\
+d. $ax^2 + bx + c = 0 \implies b^2 \geq 4ac$\\
+e. oppsite angles are pairwise equal $\implies$ oppside sides are pairwise equal.\\
+f. four angles are equal in ABCD $\implies$ four sides are equal.\\
+g. $(n^2 + 5)| 3 \implies \neg 3|n$
+
+\section{}
+b. both implication and converse are true, which means they are equivalent.\\
+c. the original - True and the converse - False.\\
+Proof of the original:\\
+If two triangles are congruent they have equal sides. Using the Herron's formula their area will be the same.\\
+
+Proof of the converse:\\
+Two triangles have the same area $\implies$ they are congruent.\\
+Proving that is false by finding a counterexample:\\
+
+Two right triangles areas are\\
+$A_1 = a_1b_1/2$\\
+$A_2 = a_2b_2/2$\\
+$A_1 = A_2 \equiv a_1b_1/2 = a_2b_2/2 \equiv a_1b_1 = a_2b_2$\\
+So we take $a_1 = 18, b_1 = 6$ and $a_2 = 9, b_2 = 3$, we will have different sides, but same area.\\
+
+d. The original and converse are true, which means they are equivalent.
+The original is proved by the definition of discriminant D of a quadratic equation:\\
+$b^2 \geq 4ac \equiv b^2 - 4ac \geq 0 \equiv D \geq 0$\\
+
+Prove of the converse:\\
+the roots of the equation are:\\
+$x_{1,2} = \frac{-b +- \sqrt{b^2 - 4ac}}{2a}$\\
+by the defintion of square root $b^2 - 4ac \geq 0$.\\
+
+e. both the original and converse are true, which means they are equivalent.\\
+"Opposite sides of ABCD are pairwise equal, then the opposite angles are pairwise equal." can be proved by using the diagonals to prove that the triangles that they divide the quadrilaterl are congruent (by using three equal sides), which will show that the angles are equal.\\
+the converse: 
+"oppsite angles are pairwise equal $\implies$ oppside sides are pairwise equal" is proved in simiral way with the diagonals and congruent triangles, but this time using three angles and one side.\\
+
+f. original is false, the converse is true.\\
+Proof of "Four sides in ABCD are equal then four angles are equal."\\
+Proving that is false by finding a counter example - rhombus (equal sides, not equal angles) 
+
+Proof of "Four angles in ABCD are equal $\implies$ four sides are equal."\\
+Four angles are equal $\implies 4x = 360 \implies x = 90 \implies$ quadrilateral with 4 angles each 90 degrees is a square and square has four equal sides.\\
+
+g. original is true, the converse is true, which means that they are equivalent.\\
+Proof of the original: $ (3 \nmid n) \implies 3 | (n^2 + 5)$\\
+Assume $3 \nmid n$. Then $n = 3k + 1 \vee n = 3k+2$, which means that $3 | (3k+1)^2 + 5 \vee 3 | (3k+2)^2 + 5$.\\
+$9k^2 + 6k + 1 + 5 \vee 9k^2 + 12k + 4 + 5 \equiv 3(3k^2 + 2k + 2) \vee 3(3k^2 + 6k 3)$, which means that the consequent is true, which makes the conditional valid and proves the original statement.\\
+
+Proof of the converse:\\
+$3 | (n^2 + 5) \implies 3 \nmid n$\\
+Assume $3 | (n^2 + 5)$. This means that $n^2 + 5 = 3k \equiv n^2 - 1 = 3k - 6 \equiv n^2 - 1 = 3(k-2)$.\\
+This means that $3 | n^2 - 1  \equiv 3| (n-1)(n+1)$, so $3 | n-1  \vee 3 | n+1$, then $3 \nmid n$.
+
+\section{}
+They are not equivalent:\\
+Prove that $12|n \implies 12|n^3$:\\
+Assume $12|n$, so let n = 12k.\\
+$n^3 = (12k)^3 = 12(12^2k^3)$, which shows that $12|n^3$\\
+Prove that $12|n^3 \implies 12|n$ is false.\\
+Proved by counterexample $n = 6$ - $6^3 / 12 = 18$, but $12 \nmid 6 $, so the converse if false.\\
+
+\section{}
+1. r + 3 is necessarily irrational if r is irrational - true\\
+when you sum irrational and rational the result is always irrational:\\
+Prove by contradiction:\\
+Assume r + 3 is rational, which means that $r + 3 = p/q \equiv r = p/q-3$ (r can be represented as ratio), which is contraction since r is irrational. This means r + 3 is irrational.\\
+
+2. 5r is necessaruly irrational if r is irrational - true\\
+when you multiply irrational and rational the result is always irrational:\\
+Prove by contradiction:\\
+Assume 5r is rational, which means $5r = p/q \equiv r = p/5q$(r can be represented as ratio), which is contradiction since r is irrational. So 5r must be irrational.\\
+
+3. r + s is necesarily irrational if r and s are irrational - false\\
+Prove by finding counterexample:\\
+$r = -\pi, q = \pi$ and $r + q = 0$, which is rational.\\
+
+4. rs is necessartily irrational if r and s are irrational - false\\
+Prove by finding counterexample:\\
+$r = 1/\pi, q = \pi$ and $rq = 1$, which is rational.\\
+
+5. $\sqrt{r}$ is necessarily irrational if r is irrational - true\\
+Prove by contradiction:\\
+Assume $\sqrt{r}$ is rational, which means that $\sqrt{r} = p/q \equiv r = \frac{p^2}{q^2}$, so r can be represented as ratio - it's rational, which is contradiction. $\sqrt{r}$ is irrational.\\
+
+6. $r^s$ is necessarily irrational if r and s are irrational - maybe false\\
+Case 1: If we say that $\sqrt{2}^{\sqrt{2}}$ is rational, then r and s are irrational  $r = \sqrt{2}$ and $s = \sqrt{2}$. This would mean that the conditional is false.\\
+Case 2: If we say that $\sqrt{2}^{\sqrt{2}}$ is irrational, then $r = \sqrt{2}^{\sqrt{2}}$ and $s = \sqrt{2}$\\
+$r^s = \sqrt{2}^{\sqrt{2}*\sqrt{2}} = \sqrt{2}^2 = 2$, which is rational. This would mean that the conditional is false. 
+
+
+\section{}
+a) m and n are even, then m + n is even.
+Assume m and n are even, then $m = 2k$ and $n = 2j$, $m + n = 2(k + j)$, which is even number too.\\
+
+b) m and n are even, then 4 | mn.
+Assume m and n are even, then $m = 2k$ and $n = 2j$, $mn = 4jk$, which is divisible by 4.\\
+
+c) m and n are odd, then m+n is even.\\
+Assume m and n are odd, then $m = 2k + 1$ and $n = 2j + 1$, $m+n = 2(k + j + 1)$, which is even.\\
+
+d) m is even and n is odd then m + n is odd.\\
+Assume m is even and n is odd, then $m = 2k$ and $n = 2j + 1$, $m+n = 2(k + j) + 1$, which is odd.\\
+
+e) m is even and n is odd then mn is odd.\\
+Assume m is even and n is odd, then $m = 2k$ and $n = 2j + 1$, $mn = 2(k(2j + 1))$, which is even.\\
+
+\section{Optional}
+a. Proof of $(\exists x,y \in \mathbb{R})[x + y = y]$\\
+$x + y = y \equiv x = 0$, so\\
+$(\forall y)[0 + y = y]$, so there exists x,y for which $x + y = y$\\
+
+b. $(\forall x)(\exists y)[x + y = 0]$\\
+for each x there is y = -x, so $x + y = 0$\\
+
+c. $(\forall a,b,c \in \mathbb{N})[a | bc \implies a | b \vee a | c]$\\
+To disprove this we have to prove that:
+$(\exists a,b,c \in \mathbb{N})[a | bc \wedge a \nmid b \wedge a \nmid c]$ \\
+if a = 27, b = 6, c = 9, then we have $(27 | 6*9) \wedge (27 \nmid 6) \wedge (27 \nmid 9)$\\
+
+d. $(\forall x,y)[x \in \mathbb{Q} \wedge y \in \mathbb{R-Q} \implies x + y \in \mathbb{R-Q}]$\\
+Assume $x \in \mathbb{Q} \wedge y \in \mathbb{R-Q}$ which means that x can be represented as p/q.\\
+Then $x + y = p/q + y = (p + qy)/q$, which can't be represented as rational (ratio between two ints), which means that the conditional is valid.\\
+
+e. $(\forall x,y)[x + y \in \mathbb{R-Q} \implies x \in \mathbb{R-Q} \vee y \in \mathbb{R-Q}]$\\
+Proving by using the contrapositive:\\
+$(\forall x,y)[x \in \mathbb{R} \wedge y \in \mathbb{R} \implies x + y \in \mathbb{R}]$\\
+representing x and y as rations will show that the sum is also ratio of numbers, which proves the contrapositive, which proves the original statement.\\
+
+f. $(\forall x,y)[x + y \in \mathbb{Q} \implies x \in \mathbb{Q} \vee y \in \mathbb{Q}]$\\
+Proving that it's false by showing couterexample:\\
+$x + y = 0$ if $x = \pi \wedge y = -\pi$, both x and y are irrational, but the sum is rational.\\
+\end{document}
