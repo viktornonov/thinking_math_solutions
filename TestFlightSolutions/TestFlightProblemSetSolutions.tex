@@ -1,0 +1,162 @@
+\documentclass{article}
+
+\title{Test Flight Problem Set}
+\author{Viktor Nonov}
+\date{May 4, 2018}
+\usepackage[cm]{fullpage}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section*{Problem 1}
+Some branches of mathematics include 0 in $\mathbb{N}$, others do not, so I'm going to check if the expression is true or false in both cases:\\
+1) Let's say $0 \in \mathbb{N}$\\
+then it is true for m = 4 and n = 0:\\
+$3*4 + 5*0 = 12$\\
+\\
+2) Let's say $0 \not\in \mathbb{N}$\\
+In this case it's false:\\
+Using proof by cases, I'm going to check values for m and n to show that there are no m,n that satisfy the equation $3m + 5n = 12$.\\
+Let m = 1, n = 1,\\
+$3*1 + 5*1 = 8 < 12$\\
+\\
+Let m = 2, n = 1,\\
+$3*2 + 5*1 = 11 < 12$\\
+\\
+Let $m \geq 3$, n = 1,\\
+$3*3 + 5*1 \geq 14 > 12$\\
+\\
+Let m = 1, $n \geq 2$,\\
+$3*1 + 5n \geq 13 > 12$\\
+\\
+Those cases cover all values for m and n in $\mathbb{N}$, so $(\exists m \in \mathbb{N})(\exists n \in \mathbb{N})[3m + 5n = 12]$ is false.
+
+\section*{Problem 2}
+The sum of any five consecutive integers is divisble by 5.\\
+The statement is true.\\
+Proof:\\
+Let's denote the first integer as k and k can be any integer. Then the next integers in the sequence would be k + 1, k + 2, k + 3, k + 4.\\
+Summing all those integers:\\
+k + (k + 1) + (k + 2) + (k + 3) + (k + 4)\\
+= 5k + 10\\
+= 5(k + 2), which is divisble by 5 without a remainder. QED\\
+
+\section*{Problem 3}
+$(\forall n \in \mathbb{Z})[n^2 + n + 1$ is odd$]$ is true.\\
+Proof:\\
+$n^2 + n + 1 = n(n+1) + 1$\\
+$n(n+1)$ are product of two consequtive integers.\\
+I'm gonna show that this product is an even number.\\
+\\
+if n is even, then we can denote it as 2k. Substituting:\\
+$2k(2k + 1)$, which shows that the product is even.\\
+if n is odd, then we can denote it as 2k. Substituting:\\
+$(2k+1)(2k+2) = (2k+1)2(k+1)$, which is also even.\\
+With this is proved that product of two consequtive integers is an even number.\\
+\\
+so after showing that $n(n+1)$ is even, I denote it with 2k.\\
+$n(n+1) + 1 = 2k + 1$, which is and odd number, which proves that the original statement is true. QED.
+
+\section*{Problem 4}
+Prove that every odd natural number is of one of the forms 4n+1 or 4n+3, where n is an integer.\\
+Proof:\\
+The definition of an odd number is $2k + 1$ for every k.\\
+We have two cases - when k is even and when k is odd. These two cases cover all values k in $\mathbb{N}$ that we care about:\\
+1. Let's assume k is even and represent it as 2n\\
+$2*2n + 1 = 4n + 1$, which is one of the forms above.\\
+\\
+2. Let's assume k is odd and represent it as 2n + 1\\
+$2*(2n + 1) + 1 = 4n + 3$, which is the other form that we needed. With this the proof is concluded.\\
+
+\section*{Problem 5}
+Prove that for any integer n, at least one of the integers n; n + 2; n + 4 is divisible by 3.\\
+Proof:\\
+Representing this with quantifiers:\\
+$(\forall n \in \mathbb{Z})[3 | n \vee 3 | (n + 2) \vee 3 | (n + 4)]$\\
+Using proof by cases, we have 3 distinct representations of n with respect to divisibility by 3:\\
+$n = 3k$\\
+$n = 3k + 1$\\
+$n = 3k + 2$\\
+\\
+1. Assume n = 3k, then n is divisible by 3.\\
+\\
+2. Assume n = 3k + 1, then n + 2 = 3k + 3 = 3(k + 1) is divisible by 3.\\
+\\
+3. Assume n = 3k + 2, then n + 4 = 3k + 6 = 3(k + 2) is divisible by 3.\\
+QED.
+
+\section*{Problem 6}
+Prove that the only prime triple (i.e. three primes, each 2 from the next) is 3, 5, 7.\\
+Proof:\\
+The prime numbers $> 2$ are always odd, so let's represent a prime triple as:\\
+2k + 1\\
+2k + 3\\
+2k + 5\\
+For k = 1, we have the triple 3, 5, 7. Throught trying with values for $k > 1$, you can see that one of representations is divided by 3, so using proof by cases I'll show that always one of the presentations above are divisble by 3.\\
+In order to list all the cases I'll list all possible representations of k with respect of divisibility by 3:\\
+1. k = 3n\\
+2. k = 3n + 1\\
+3. k = 3n + 2\\
+\\
+1. Assume k = 3n\\
+Using $2k + 3 = 2*3n + 3 = 3(2n + 1)$ is shown that this representation is divisible by 3.\\
+\\
+2. Assume k = 3n + 1\\
+Using $2k + 1 = 2(3n + 1) + 1 = 6n + 3 = 3(2n+3)$, which shows that this representation is divisible by 3.\\
+\\
+3. Assume k = 3n + 2\\
+Using $2k + 5 = 2(3n+2) + 5 = 6n + 9 = 3(2n + 3)$, which shows that this representaiton is divisble by 3.\\
+QED.
+
+\section*{Problem 7}
+Prove that for any natural number n,\\
+$2 + 2^2 + 2^3 + .. + 2^n = 2^{n+1}-2$\\
+Proof:\\
+Using proof by mathematical induction:\\
+Base case: for n = 1 is true, because $2 = 2^2 - 2$.\\
+Induction hypothesis:\\
+Assume the expression is true for n = k.\\
+$2 + 2^2 + 2^3 + .. + 2^k = 2^{k+1} - 2$\\
+Let n = k + 1, then we need to prove that\\
+$2 + 2^2 + 2^3 + .. + 2^k + 2^{k+1} = 2^{k+2} - 2$\\
+Getting left side:\\
+$2 + 2^2 + 2^3 + .. + 2^k + 2^{k+1}$\\
+$2^{k+1} - 2 + 2^{k+1}$ (substituting by the induction hypothesis)\\
+$2^{k+2}-2$ (by algebratic substitution)\\
+by the principle of math induction the original statement is proved.
+
+\section*{Problem 8}
+Prove (from the defnition of a limit of a sequence) that if the sequence $\{a_n\}_{n=1}^\infty$ tends to limit L as $n \rightarrow \infty$, then for any fixed number $M > 0$, the sequence $\{Ma_n\}_{n=1}^\infty$  tends to the limit ML.\\
+Proof:\\
+From the definition of a limit:
+$\{a_n\}_{n=1}^\infty$ tends to limit L as $n \rightarrow \infty$ $\Leftrightarrow |a_m - L| < \varepsilon$, where $m \in \mathbb{N}$ and it is arbitrary large.\\
+$|a_m - L| < \varepsilon$ /*$M > 0$\\
+$M|a_m - L| < M*\varepsilon$\\
+$|Ma_m - ML| < M*\varepsilon$ (1)\\
+\\
+Again from the definition of a limit the sequence $\{Ma_n\}_{n=1}^\infty$  tends to the limit ML as $n \rightarrow \infty$ means that:\\
+$(\forall \varepsilon)(\exists n \in \mathbb{N})(\forall m \geq n)[|Ma_m - ML| < \varepsilon]$. Given that definition (1) satisfies it, so $\{Ma_n\}_{n=1}^\infty$  tends to the limit ML if  $\{a_n\}_{n=1}^\infty$ tends to limit L. QED.
+
+\section*{Problem 9}
+Example of family of such intervals is the intervals in the form $(0, \frac{1}{n})$.\\
+for n = 1, the interval is (0, 1)\\
+for n = 2, the interval is $(0, \frac{1}{2})$\\
+for n = 3, the interval is $(0, \frac{1}{3})$\\
+so the least upper bound is decresing with increasing of n\\
+This shows that $A_{n+1} \subset A_{n}$.\\
+with $n \rightarrow \infty$, $\frac{1}{n}$ is getting closer to the limit 0 (by the definition of a limit).\\
+so eventually the interval will tend to (0,0), which is $\emptyset$ and when there is intersection of all intervals in the family $\cap_{n=1}^\infty(0, \frac{1}{n})$, the it will result in empty set too. QED\\
+
+\section*{Problem 10}
+Example of family of such intervals is the intervals in the form $[1, \frac{n+1}{n})$.
+for n = 1, the interval is [1, 2)\\
+for n = 2, the interval is $[1, \frac{3}{2})$\\
+for n = 3, the interval is $[1, \frac{4}{3})$\\
+so the least upper bound is decresing with increasing of n\\
+This shows that $A_{n+1} \subset A_{n}$.\\
+with $n \rightarrow \infty$, $\frac{n+1}{n}$ is getting closer to the limit 1 (by the definition of a limit).\\
+so eventually the interval will tend to [1,1), which is set of one element $\{1\}$ and when there is intersection of all intervals in the family $\cap_{n=1}^\infty(0, \frac{n+1}{n})$, the it will result in set with one element that is contained by every iterval in the family - $\{1\}$. QED\\
+
+\end{document}
