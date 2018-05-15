@@ -1,0 +1,143 @@
+\documentclass{article}
+\title{Assignment 8}
+\author{Viktor Nonov}
+\date{April 10, 2018}
+\usepackage[cm]{fullpage}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\section*{Assignment 8 Solutions}
+
+\section{}
+We need to prove the claim: $(\exists m,n \in \mathbb{Z})(\exists k \in \mathbb{Z})[p = k^2 \wedge m^2 + mn + n^2  = p]$\\
+Checking with $m = n = k = 0$:\\
+$0 + 0 + 0 = 0 = 0^2$, which proves the statement.
+
+\section{}
+We need to prove the claim:\\
+$(\forall m \in \mathbb{Z^+})(\exists n \in \mathbb{Z^+})(\exists k \in \mathbb{Z})[p = k^2 \wedge mn + 1 = p]$\\
+$mn + 1 = p = k^2$\\
+$m = \frac{k^2 - 1}{n} = \frac{(k - 1)(k + 1)}{n}$\\
+So if n = k - 1, then m would be k + 1, so the initial claim is true for n = k - 1, because:\\
+$m = \frac{(k - 1)(k + 1)}{k - 1} = k + 1$ given k = n + 1, where $n \geq 0$ then $k \geq 1$, which is subset of $\mathbb{Z^+}$, which we need for m.\\
+
+\section{}
+claim: $(\forall n \in \mathbb{Z^+})(\exists b,c \in \mathbb{Z^+})(\exists p,q \in \mathbb{N})[f(n) = n^2 + bn + c = p*q]$\\
+Trying to prove by brute forcing:\\
+1. $b = c = 1$\\
+$n^2 + n + 1$, which we can prove that is odd, but it might be prime or composite.\\
+2. $b = 1, c = 2$\\
+$n^2 + n + 2 = n(n+1) + 2$, which I proved is even in some of the previous assignments, so this proves the claim for $f(n)$.
+
+\section{}
+Claim: even number $> 2 = p + q \implies$ odd number $ > 5 = a + b + c$, where p, q, a, b, c are primes.\\
+Represent every even number $> 2$ as 4k, where $k \geq 1$ and every odd number $> 5$ as $4k + 3$, where $k \in \mathbb{N}$.\\
+Assuming the Goldbach conjecture: $4k = p + q$, where p and q are primes.\\
+Then odd number in the form 4k + 3 = p + q + 3 (by substituting 4k with the assumption), proves the implication.\\
+
+\section{}
+Claim: $\sum_{1}^n2(n-1)+1 = n^2$\\
+Using proof by induction:\\
+Base case is true:\\
+n = 1\\
+$2(1-1) + 1 = 1$\\
+Induction hypothesis:\\
+assume it's true for n = k\\
+$\sum_{1}^k2(k-1) + 1 = k^2$\\
+Then prove for $n = k + 1$, that\\
+$\sum_{1}^{k+1}2(n-1) + 1 = (k+1)^2$\\
+Using the definition of summation:\\
+$\sum_{1}^{k+1}2(n-1) + 1 = \sum_{1}^{k}(2(n-1) + 1) + 2(k+1 -1) +1 $\\
+Using the assumption:\\
+$= k^2 + 2k + 1 = (k + 1)^2$, so by principle of math induction the claim is proved.
+
+\section{}
+Claim: $\sum_{r=1}^nr^2 = \frac{1}{6}n(n+1)(2n+1)$\\
+Using proof by induction:\\
+Base case:\\
+n = 1\\
+$1 = \frac{1}{6}1(2)(3) = 1$, so it's true for the base case.\\
+Induction hypothesis:\\
+assume it's true for r = k:\\
+$\sum_{r=1}^kr^2 = \frac{1}{6}k(k+1)(2k+1)$\\
+Then check for $n = k + 1$\\
+By definition of summation:\\
+$\sum_{r=1}^{k+1}r^2 = \sum_{r=1}^kr^2 + (k+1)^2$\\
+Substitute the part that we assumed:\\
+$\sum_{r=1}^{k+1}r^2 = \frac{1}{6}k(k+1)(2k+1) + (k+1)^2$\\
+$(k+1)(\frac{1}{6}k(2k+1) + k+1) = \frac{1}{6}(k+1)(k+2)(2k+3)$, which proves the claim by the principle of math induction.\\
+
+\section*{Optional}
+
+\section{}
+The sum is:\\
+$1 + 2 + ... + n-1 + n = N$
+Listing the members backwards:\\
+$n + n - 1 + ... + 2 + 1 = N$\\
+both have equal number of members, so summing them would be:\\
+$(n + 1) + (n - 1 + 2) + ... + (n-1+2) + (n+1) = 2N$\\
+we have n number of members, so:\\
+$n(n+1) = 2N$ /divide both sides by 2\\
+$\frac{1}{2}n(n+1) = N$\\
+
+\section{}
+Claim: Any finite collection of points in the plane, not all collinear, there is a triangle having three points as its vertices, which contains none of the other points in its interior.\\
+The base case is n = 3, where we have 3 points. 3 points are going to form a triangle (let's denote it as $\triangle ABC$) with no points inside.\\
+If we add one more point there are two cases:\\
+1. the point is inside $\triangle ABC$ formed by the previous 3 points.\\
+Then if we connect this point to any of the other 2 points, we'll be able to construct a triangle that does not have any points inside.\\
+2. the point is outside $\triangle ABC$ formed by the previous 3 points.\\
+Then if we connect this point to any of the other 2 points, we'll still have $\triangle ABC$ with no points inside.\\
+Let's assume that it's true for n = k.\\
+Then check for n = k + 1. By adding new point we are going to have one of the cases above: inside a triangle or outside of the triangle, so by principle of math induction the claim is proved.\\
+
+\section{}
+a.\\
+Claim: $4^n - 1$ is divisible by 3.\\
+if $4^n - 1$ is divisible by 3, it can be represented as $4^n -1 = 3k$\\
+Using proof by induction:\\
+Base case:\\
+n = 1\\
+4 - 1 = 3, which is divisble by 3 and that makes the base case true.\\
+Induction hypothesis:\\
+Assume it's true for n = k:\\
+$4^k - 1 = 3r$\\
+Then check for $n = k + 1$\\
+$4^{k+1} - 1 = 4^{k+1} - 4 + 3 = 4(4^k -1) + 3$\\
+Substituting the assumption:\\
+$43r + 3 = 3(4r + 3)$, which is divisible by 3. By principle of math induction the claim is proved.\\
+\\
+b.\\
+Claim: $(\forall n \geq 5)[(n + 1)! > 2^{n+3}]$\\
+Using proof by induction:\\
+Base case:\\
+n = 5\\
+$6! > 2^{5 + 3} \equiv 360*2! > 256$, which makes the base case true.\\
+Induction hypothesis:\\
+Assume it's true for n = k:\\
+$(k + 1)! > 2^{k + 3}$\\
+Then check for $n = k + 1$\\
+$(k + 2)! > 2^{k + 4}$\\
+$(k+2)(k+1)! > 2^{k+3}2$\\
+By the assumption we know that:\\
+$(k+1)! > 2^{k+3}$\\
+We need to prove that\\
+$k + 2 > 2$, which is true, because k is always $k > 0$\\
+\\
+c.\\
+Claim: $\forall n \in \mathbb{N}: \sum_{r=1}^nrr! = (n + 1)! - 1$\\
+Using proof by induction:\\
+Base case:\\
+n = 1\\
+$1*1! = 2! - 1$, which makes the base case true.\\
+Induction hypothesis:\\
+Assume it's true for n = k:\\
+$\sum_{r=1}^krr! = (k+1)! - 1$\\
+Then check for $n = k + 1$\\
+$\sum_{r=1}^{k+1}rr! = \sum_{r=1}^krr! + (k+1)(k+1)!$\\
+Substituting the assumption:\\
+$(k+1)! - 1 + (k+1)(k+1)! = (k+1)!(k + 2) - 1 = (k+2)! - 1$, which is the summation for $n = k + 1$, this proves the claim by math induction principle.
+
+\end{document}
